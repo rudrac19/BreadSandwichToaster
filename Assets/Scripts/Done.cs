@@ -100,6 +100,11 @@ public class Done : MonoBehaviour
 
     }
 
+    void Timer()
+    {
+        Debug.Log("Timer")
+    }
+
     IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(waitTime1);
