@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Start Screen
+  - Other
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Transitions
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Open Screen
+    uniqueID: 3843576113
+    locked: 0
+  - name: Start Screen
+    uniqueID: 2234741427
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 2095387407
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 85372585
+    locked: 0
+  - name: New Layer 5
+    uniqueID: 1322985309
+    locked: 0
+  - name: New Layer 6
+    uniqueID: 608461309
+    locked: 0
+  - name: New Layer 7
+    uniqueID: 2029877207
+    locked: 0
+  - name: 
+    uniqueID: 126897031
+    locked: 0
+  - name: New Layer 9
+    uniqueID: 1612005181
+    locked: 0
+  - name: New Layer 10
+    uniqueID: 1350340607
+    locked: 0
+  - name: New Layer 11
+    uniqueID: 3711768037
+    locked: 0
+  - name: New Layer 12
+    uniqueID: 1405417011
+    locked: 0
+  - name: New Layer 13
+    uniqueID: 1448245803
+    locked: 0
+  - name: New Layer 14
+    uniqueID: 3308817507
+    locked: 0
+  - name: Bg
+    uniqueID: 4245035607
+    locked: 0
