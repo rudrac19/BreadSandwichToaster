@@ -102,7 +102,7 @@ public class Done : MonoBehaviour
 
     void Timer()
     {
-        Debug.Log("Timer")
+        Debug.Log("Timer");
     }
 
     IEnumerator Cooldown()
