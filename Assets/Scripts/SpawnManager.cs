@@ -40,7 +40,7 @@ public class SpawnManager : MonoBehaviour
                 stickySpawn.Play();
             }
 
-            if (SceneManager.GetActiveScene().buildIndex == 3)
+            if (SceneManager.GetActiveScene().buildIndex == 3 || SceneManager.GetActiveScene().buildIndex == 4)
             {
                 toppingsAdded.Add(toppingIndex);
                 if (toppingsAdded.Count == 5)

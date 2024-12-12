@@ -14,7 +14,7 @@ public class BreadSelector : MonoBehaviour
 
     public void Select(int breadIndex)
     {
-        if(SceneManager.GetActiveScene().buildIndex != 3)
+        if(SceneManager.GetActiveScene().buildIndex != 3 && SceneManager.GetActiveScene().buildIndex != 4)
         {
             gameCanvas.SetActive(true);
             breads[breadIndex].SetActive(true);
