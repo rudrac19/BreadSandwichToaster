@@ -46,6 +46,12 @@ public class LevelLoader : MonoBehaviour
             Debug.Log("Go to " + modeSeceletion.mode);
             LoadStringLevel("List Mode");
         }
+
+        if (modeSeceletion.mode == 2)
+        {
+            Debug.Log("Go to " + modeSeceletion.mode);
+            LoadStringLevel("Timer Mode");
+        }
     }
 
     public void LoadNextLevel()

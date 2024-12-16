@@ -8,6 +8,7 @@ public class ModeSeceletion : MonoBehaviour
 
     public GameObject checkBoxForOrginal;
     public GameObject checkBoxForList;
+    public GameObject checkBoxForTimer;
 
     void Start()
     {
@@ -21,12 +22,21 @@ public class ModeSeceletion : MonoBehaviour
         {
             checkBoxForOrginal.SetActive(true);
             checkBoxForList.SetActive(false);
+            checkBoxForTimer.SetActive(false);
         }
 
         if (mode == 1) // 1 means List Mode
         {
             checkBoxForOrginal.SetActive(false);
+            checkBoxForTimer.SetActive(false);
             checkBoxForList.SetActive(true);
+        }
+
+        if (mode == 2) // 2 means Timer Mode
+        {
+            checkBoxForOrginal.SetActive(false);
+            checkBoxForList.SetActive(false);
+            checkBoxForTimer.SetActive(true);
         }
     }
 
