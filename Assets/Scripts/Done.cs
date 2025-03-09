@@ -22,6 +22,7 @@ public class Done : MonoBehaviour
     public Animator notDone;
 
     public int score;
+    public int scoreForTimer = 0;
     public int amountVaildToBeDone = 2;
     public int breadType;
     public float waitTime1 = .5f;
@@ -32,9 +33,20 @@ public class Done : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(SceneManager.GetActiveScene().buildIndex.ToString());
         score = PlayerPrefs.GetInt("score", 0);
-        scoreText.text = score.ToString();
-        scoreOptionsText.text = "Score: " + score.ToString();
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            scoreForTimer = 0;
+            scoreText.text = "0";
+            scoreOptionsText.text = "Amount Of Customers Served: " + score.ToString();
+        }
+        else
+        {
+            scoreText.text = score.ToString();
+            scoreOptionsText.text = "Score: " + score.ToString();
+        }
+
     }
 
     public void DoneWithSandwich()
@@ -42,8 +54,18 @@ public class Done : MonoBehaviour
         if (spawnManager.atLeastTwoToppings >= amountVaildToBeDone)
         {
             score++;
-            scoreText.text = score.ToString();
-            scoreOptionsText.text = "Score: " + score.ToString();
+            if (SceneManager.GetActiveScene().buildIndex == 4)
+            {
+                scoreForTimer++;
+                scoreText.text = scoreForTimer.ToString();
+                scoreOptionsText.text = "Amount Of Customers Served: " + score.ToString();
+            }
+            else
+            {
+                scoreText.text = score.ToString();
+                scoreOptionsText.text = "Score: " + score.ToString();
+            }
+            
             PlayerPrefs.SetInt("score", score);
 
             breadClosed[breadType].SetActive(true);
@@ -56,8 +78,16 @@ public class Done : MonoBehaviour
 
     public void IncorrectSandwich()
     {
-        scoreText.text = score.ToString();
-        scoreOptionsText.text = "Score: " + score.ToString();
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            scoreText.text = scoreForTimer.ToString();
+            scoreOptionsText.text = "Amount Of Customers Served: " + score.ToString();
+        }
+        else
+        {
+            scoreText.text = score.ToString();
+            scoreOptionsText.text = "Score: " + score.ToString();
+        }
         PlayerPrefs.SetInt("score", score);
 
         breadClosed[breadType].SetActive(true);

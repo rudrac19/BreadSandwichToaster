@@ -7,10 +7,15 @@ using UnityEngine.SceneManagement;
 public class AdjustTimer : MonoBehaviour
 {
     public Text time;
+    public Text scoreText;
+    public GameObject intrustions;
+
     [SerializeField] Slider slider;
     [SerializeField] GameObject sliderObject;
     [SerializeField] GameObject[] buttons;
     [SerializeField] GameObject[] editableUIs;
+
+    public Done done;
 
     public int minutes;
     public int seconds;
@@ -20,6 +25,7 @@ public class AdjustTimer : MonoBehaviour
     void Start()
     {
         editable = true;
+        intrustions.SetActive(true);
         sliderObject.SetActive(true);
         foreach (var button in buttons)
         {
@@ -29,6 +35,7 @@ public class AdjustTimer : MonoBehaviour
         {
             editableUI.SetActive(true);
         }
+        scoreText.text = "";
     }
 
     void Update()
@@ -66,6 +73,7 @@ public class AdjustTimer : MonoBehaviour
     public void PerpareCountdown()
     {
         editable = false;
+        intrustions.SetActive(false);
         StartCoroutine(StartCountdown());
     }
 
@@ -90,7 +98,20 @@ public class AdjustTimer : MonoBehaviour
         }
         else
         {
-            //end countdown
+            editable = true;
+            sliderObject.SetActive(true);
+            foreach (var button in buttons)
+            {
+                button.SetActive(false);
+            }
+            foreach (var editableUI in editableUIs)
+            {
+                editableUI.SetActive(true);
+            }
+            editableUIs[1].SetActive(false);
+            scoreText.text = "Score: " + done.scoreForTimer.ToString();
+            yield return new WaitForSeconds(7f);
+            SceneManager.LoadScene("Timer Mode");
         }
     }
 }
